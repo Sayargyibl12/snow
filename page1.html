@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  transition: 0.3s;
+  
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+.w3-third{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.923);
+  transition: 0.3s;
+}
+
+.w3-third:hover{
+  box-shadow: 0 16px 32px 0 rgb(0, 0, 0);
+}
+
+  * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+.mySlides {display: none;}
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.button {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: #f4ebeb;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Our Dates</a>
+    <a href="snowpropose.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Propose</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">My Propose</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 5</div>
+    <img src="image/snow3.jpg" style="width:100%">
+    
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 5</div>
+    <img src="image/snow6.jpg" style="width:100%" height="660px">
+    
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 5</div>
+    <img src="image/snow8.jpg" style="width:100%">
+    
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="image/snow9.jpg" style="width:100%">
+    
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="image/snow7.jpg" style="width:100%">
+    
+  </div>
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>I love You</em></p>
+  
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Baby lyy</b></p><br>
+      <img src="image/snow10.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" style="margin-left: -200px; border-radius: 30px;" width="230" height="200">
+      <img src="image/snow5.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" style="border-radius: 30px;" width="230" height="200">
+      <img src="image/snow11.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" style="margin-right: 1000px; border-radius: 30px;" width="220" height="400">
+      
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p style="font-size: larger; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"><br><br><br><br>Meeting you was one of the best times in my life. i mean you showed me something i've never felt before you truely made me fall in love with you without even trying.</p>
+    </div>
+  </div>
+  
+
+<!-- Second Parallax Image with Portfolio Text -->
+
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">Our Dates</h3>
+  <p class="w3-center"><em>Here are some of my selected Date<br> </em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <a href="Bar.html">  <img src="image/barr.jpg" style="width:100%" height="208px" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains"></a>
+    </div>
+
+    <div class="w3-col m3">
+      <a href="Cafe.html"> <img src="image/cafee.jpg" style="width:100%; margin-left: 120px;" height="208px" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans"></a>
+    </div>
+
+
+    <div class="w3-col m3">
+      <a href="Arcade.html"><img src="image/alibaba.jpg" style="width:100%; margin-left: 280px;" height="208px" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean"></a>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <a href="EatingOut.html"><img src="image/mala.jpg" style="width:100%" height="208px" style="margin-top: 30px;"  onclick="onClick(this)" class="w3-hover-opacity" alt="The mist"></a>
+    </div>
+
+    <div class="w3-col m3">
+      <a href=""><img src="image/paint.jpg" style="width:100%; margin-left: 120px;"height="208px" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter"></a> 
+    </div>
+
+    <div class="w3-col m3">
+      <a href="Cake.html"><img src="data:image/png;base64,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" alt="Random Name" style="width:100%; margin-left: 280px;" height="208px" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train"></a>
+    </div>
+
+
+  </div>
+</div>
+<h3 class="w3-center">This is how i started to falling in love with you</h3>
+  <p class="w3-center"><em>အမှန်အတိုင်းပြောရမယ်ဆိုရင် ninjaမှာစတွေ့တုန်းကကိုစိတ်ကမသေချာခဲ့ဘူး ဒီတိုင်းတွေ့ပီးနောက်နေ့ကြပီးသွားမှာဘဲဆိုပီးနေခဲ့တာ ဒါပေမဲ့ အဲ့နေ့နောက်ပိုင်းမှာ မင်းaccထဲကိုခဏ"ဝင်ကြည့်မိပီး seenပြန်မပြလိုတောင်ဝမ်းနည်းခဲ့သေးတယ် အဲ့ထဲက ကိုယ်သထိထားမိလာတာက မင်းက ကိုစိတ်ထဲရောက်နေပီဆိုတာဘဲ အဲ့နောက်ပိုင်းအကြောင်းအမျိုး"နဲ့တွေ့ခဲ့ကြပီးတော့ မင်းကိုတကယ်ချစ်ရဲ့လားဆိုတာအမြဲကိုယ့်ဟာကိုမေးပီးနေခဲ့တာ ဘာလ်ုလဲဆို abroad ထွက်ဖိုအချိန်သိပ်မလိုတော့တဲ့လူနဲ့ တွဲရင် အခက်အခဲတွေအများကြီးရှိမယ်ဆိုတာသိလို ဒါပေမဲ့လဲအချိန်ကြာလာတာနဲ့အမျှ သိလာရတာ မင်းလောက်ကိုယ့်အပေါ်ချစ်ပေးပီး အနစ်နာခံပေးတဲ့လူကမရှိဘူး အဲ့တော့မင်းအပေါ်ကိုယ်ရဲ့ချစ်တဲ့စိတ်တွေပိုများလာခဲ့တယ် တခါတလေမင်းလာပြတဲ့ ssတွေမှာ တခြားယောကျင်္ားလေးတွေနဲ့ပြောတာ တိုgame စော့တာတိုဆိုရင်တောင် နားလည်ပေးနိုင်တယ်ဆိုပေမဲ့ ဝမ်းနည်းမိတယ်ဘာဘဲဖြစ်" မင်းကိုတကယ်ချစ်မိသွားတဲ့အခါဒါတွေလောက်နဲ့တော့ မင်းကိုလက်လွှတ်မခံနိုင်ဘူး အဲ့အတွက်ကြောင့်မို မင်းသာလက်ခံမယ်ဆိုရင် မင်းဘေးမှာအမြဲတမ်းကောင်း"ဆိုး" ရှိပေးသွားချင်တယ် တကယ်လို နိုင်ငံခြားထွက်သွားလိုldrs ဖြစ်ခဲ့ရင်တောင်ခက်ခဲမယ်ဆိုတာသိပေမဲ့ ကိုယ်သေချာပေါက်မင်းဆီရောက်အောင်လာခဲ့မယ်<br> </em></p><br>
+
+
+<!-- Footer -->
+<footer id="footer" class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="page1.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+</script>
+
+</body>
+</html>

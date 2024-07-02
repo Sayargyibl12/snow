@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Princess</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serief;
+		}
+		body{
+			background-color: #1b1b1b;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+		}
+		.card{
+			position: relative;
+			width: 600px;
+			height: 350px;
+			border-radius: 20px;
+			display: flex;
+			align-items: center;
+			transition: 0.5s;
+		}
+		.card .circle{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+		.card .circle::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #d83133;
+			clip-path: circle(120px at center);
+			transition: 0.5s;
+		}
+		.card:hover .circle::before{
+			background: #000000;
+			clip-path: circle(500px at center);
+		}
+		.card img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			height: 100px;
+			transition: 0.5s;
+			opacity: 0;
+		}
+		.card:hover img{
+			left: 78%;
+			height: 400px;
+			opacity: 3;
+			height: 100%;
+			width: 60%;
+		}
+		.card .content{
+			position: relative;
+			width: 50%;
+			left: 20%;
+			padding: 20px 20px 20px 40px;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.card:hover .content{
+			left: 0;
+			opacity: 1;
+			visibility: visible;
+		}
+		.card .content h2{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 3em;
+			line-height: 2em;
+			margin-bottom: 5px;
+		}
+		.card .content h3{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1em;
+			line-height: 3em;
+			max-width: 700;
+		}
+		.card .content p{
+			color: #fff;
+			font-size: 10px;
+			padding-bottom: 20px;
+		}
+		.card .content a{
+			position: relative;
+			color: #111;
+			background-color: #fff;
+			padding: 10px 20px;
+			border-radius: 10px;
+			text-decoration: none;
+			transition: 0.55s;
+		}
+	</style>
+</head>
+<body>
+<div class="card">
+	<div class="circle"></div>
+	<div class="content">
+		<h2>Hello</h2>
+		<h3>My Baby Boo</h3>
+		<p>I have to show you something If you wants to continue click that</p>
+		<a href="page1.html">Continue</a>
+	</div>
+	<img src="image/snow1.jpg" alt="">
+</div>
+</body>
+</html>
